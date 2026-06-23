@@ -11,14 +11,14 @@ A small (EXPERIMENTAL!) script to reduce latency jitter when running Klipper on 
 Make the script executable:
 
 ```bash
-chmod +x /home/pi/klipper-pi-mitigations/bump-priorities.py
+chmod +x $HOME/klipper-pi-mitigations/bump-priorities.py
 ```
 
 Install the included systemd drop-in, which adds the script as a post-start command on the Klipper service:
 
 ```bash
 sudo mkdir -p /etc/systemd/system/klipper.service.d
-sudo ln -sf /home/pi/klipper-pi-mitigations/klipper-mitigations.conf /etc/systemd/system/klipper.service.d/
+sudo ln -sf $HOME/klipper-pi-mitigations/klipper-mitigations.conf /etc/systemd/system/klipper.service.d/
 sudo systemctl daemon-reload
 sudo systemctl restart klipper
 ```
